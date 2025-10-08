@@ -1,23 +1,31 @@
 // Jest tests for TypeScript solution
-import { Solution } from './solution';
+import { Book } from './solution';
 
-describe('TypeScript Solution Tests', () => {
-  let solution: Solution;
+describe('Book', () => {
+  let solution: Book;
 
   beforeEach(() => {
-    solution = new Solution();
+    solution = new Book();
   });
 
-  describe('greet', () => {
-    test('should return greeting message', () => {
-      expect(solution.greet('World')).toBe('Hello, World!');
+  describe('find', () => {
+
+
+    it('should return the index of a specific letter', () => {
+      expect(solution.find('C')).toBe(2);
     });
 
-    test('should greet different names', () => {
-      expect(solution.greet('Alice')).toBe('Hello, Alice!');
-      expect(solution.greet('Bob')).toBe('Hello, Bob!');
+    it('should return the index of a specific letter', () => {
+      expect(solution.find('A')).toBe(0);
     });
+
+    it('should return the index of a specific letter', () => {
+      expect(solution.find('G')).toBe(5);
+    });
+    
+
   });
+
 
  
 });

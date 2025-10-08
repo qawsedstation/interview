@@ -1,24 +1,39 @@
 
-export class Solution {
-  /**
-   * Returns a greeting message
-   */
-  greet(name: string): string {
-    return `Hello, ${name}!`;
+export class Book {
+
+  private static readonly BOOK: string[] = ['A', 'B', 'C', 'E', 'F', 'G'];
+
+  find(letter: string): number {
+
+    let left = 0;
+    let right = Book.BOOK.length - 1;
+
+    while (left <= right) {
+
+      let mid = Math.floor((left + right) / 2);
+
+      if (Book.BOOK[mid] === letter) {
+        return mid
+      }
+
+      if (Book.BOOK[mid] < letter) {
+        left = mid + 1;
+      } else {
+        right = mid - 1;
+      }
+
+    }
+
+    // let i = 0;
+    // for (let bookLetter of Book.BOOK) {
+    //   if (letter === bookLetter) {
+    //     return i;
+    //   }
+    //   i++;
+    // }
+    // return 0;
   }
 
-  /**
-   * Adds two numbers
-   */
-  add(a: number, b: number): number {
-    return a + b;
-  }
 
-  /**
-   * Finds the maximum number in an array
-   */
-  findMax(numbers: number[]): number | undefined {
-    if (numbers.length === 0) return undefined;
-    return Math.max(...numbers);
-  }
+
 }
