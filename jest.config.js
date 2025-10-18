@@ -13,4 +13,6 @@ module.exports = {
     '!src/**/*.test.{js,jsx,ts,tsx}',
     '!src/**/*.spec.{js,jsx,ts,tsx}',
   ],
+  verbose: true,
+  silent: false,
 };
